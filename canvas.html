@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <title>Canvas</title>
+
+    <canvas id="canvas" width="600" height="600">
+        <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var radius = 210;
+        var eyeRadius = 30;
+        var eyeXOffset = 75;
+        var eyeYOffset = 60;
+
+        context.fillStyle = "rgba(115, 222, 147, 1)"; 
+        context.fillRect(50, 50, 510, 510);
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = 'yellow';
+        context.fill();
+        context.lineWidth = 5;
+        context.strokeStyle = 'rgba(255, 218, 0, 1)';
+        context.stroke();
+
+        var x = centerX + eyeXOffset;
+        var y = centerY - 2 * eyeYOffset;
+        var width = 70;
+        var height = 100;
+
+        context.beginPath();
+        var topCurveHeight = height * 0.3;
+        context.moveTo(x, y + topCurveHeight);
+
+        context.bezierCurveTo(
+            x, y, 
+            x - width / 2, y, 
+            x - width / 2, y + topCurveHeight
+        );
+
+        context.bezierCurveTo(
+            x - width / 2, y + (height + topCurveHeight) / 2, 
+            x, y + (height + topCurveHeight) / 2, 
+            x, y + height
+        );
+
+        context.bezierCurveTo(
+            x, y + (height + topCurveHeight) / 2, 
+            x + width / 2, y + (height + topCurveHeight) / 2, 
+            x + width / 2, y + topCurveHeight
+        );
+
+        context.bezierCurveTo(
+            x + width / 2, y, 
+            x, y, 
+            x, y + topCurveHeight
+        );
+
+        context.closePath();
+        context.fillStyle = 'red';
+        context.fill();
+
+        x = centerX - eyeXOffset;
+        context.beginPath();
+        var topCurveHeight = height * 0.3;
+        context.moveTo(x, y + topCurveHeight);
+
+        context.bezierCurveTo(
+            x, y, 
+            x - width / 2, y, 
+            x - width / 2, y + topCurveHeight
+        );
+
+        context.bezierCurveTo(
+            x - width / 2, y + (height + topCurveHeight) / 2, 
+            x, y + (height + topCurveHeight) / 2, 
+            x, y + height
+        );
+
+        context.bezierCurveTo(
+            x, y + (height + topCurveHeight) / 2, 
+            x + width / 2, y + (height + topCurveHeight) / 2, 
+            x + width / 2, y + topCurveHeight
+        );
+
+        context.bezierCurveTo(
+            x + width / 2, y, 
+            x, y, 
+            x, y + topCurveHeight
+        );
+
+        context.closePath();
+        context.fillStyle = 'red';
+        context.fill();
+
+        context.beginPath();
+        context.arc(centerX, centerY+60, 120, 0, Math.PI, false);
+        context.fillStyle = 'rgba(209, 179, 4, 1)';
+        context.fill();
+        context.strokeStyle = 'rgba(255, 218, 0, 1)';
+        context.lineTo(centerX+122, centerY+60);
+        context.lineWidth = 5;
+        context.stroke();
+        </script>
+        </canvas>
+</html>
