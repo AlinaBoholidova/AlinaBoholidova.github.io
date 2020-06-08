@@ -1,0 +1,795 @@
+body {
+    margin: 0;
+    font-family: 'Carrois Gothic';
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+
+    cursor: url("images/star.cur"), default;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1108px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Navifation bar Main Page*/
+/* Header */
+.header__main {
+    background-color: transparent;
+
+    width: 100%;
+
+    height: 80px;
+    padding-top: 22.5px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    box-shadow: 0 1px 5px #3FFFD0;
+    -webkit-box-shadow: 0 1px 5px #3FFFD0;
+}
+
+.header__inner__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Nav */
+.nav__main {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.nav__link__main {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .2s linear;
+}
+
+.nav__link__main:hover {
+    color: #3FFFD0;
+    text-shadow: #FFF 0px 0px 15px, rgb(190, 239, 110) 0px 0px 30px, rgb(190, 239, 110) 0px 0px 50px;
+}
+
+.nav__link__main.active {
+    color: #3FFFD0;
+    text-shadow: #FFF 0px 0px 15px, rgb(190, 239, 110) 0px 0px 30px, rgb(190, 239, 110) 0px 0px 50px;
+}
+
+/* Navigation bar Others */
+/* Header */
+.header {
+    background-color: #333;
+
+    width: 100%;
+
+    height: 80px;
+    padding-top: 22.5px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    box-shadow: 0 1px 5px #333;
+    -webkit-box-shadow: 0 1px 5px #333;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.responsiveImg {
+    display: inline-block;
+    padding-top: 6px;
+    height: auto;
+    position: relative;
+}
+
+/* Nav */
+.nav {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .2s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #00dc8c;
+    opacity: 0;
+
+    position: absolute;
+    margin-top: 23px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .2s linear;
+}
+
+.nav__link:hover {
+    color: #00dc8c;
+}
+
+.nav__link:hover:after,
+.nav__link.active:after {
+    opacity: 1;
+}
+
+.nav__link.active {
+    color: #00dc8c;
+}
+
+/* index.html */
+/* Intro - Main Page */
+#intro {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    background: url("images/bc.jpg") no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#mainlogo {
+	width: 800px;
+    height: 200px;
+    margin: 35% auto;
+    
+	background: url("images/TXT.png") no-repeat;
+    background-size: cover;
+
+	opacity: 1;
+
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+}
+
+#mainlogo:hover {
+	transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    
+	opacity: 0;
+}
+
+
+/* profile.html */
+/* About group + Group photo + Members profiles */
+.intro__profile {
+    height: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+.profileImg {
+    width: 100%;
+
+    filter: drop-shadow(0 0 5px #333);
+}
+
+.description {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description__parts {
+    position: relative;
+    display: flex;
+    padding-right: 0;
+}
+
+.content__title1 {
+    font-size: 55px;
+    color: #fff;
+
+    padding-left: 15px;
+    margin-top: -45px;
+}
+
+.content__title1 .nowrap {
+    white-space: nowrap;
+}
+
+.content__inner {
+    position: relative;
+
+    margin-left: 80px;
+    margin-top: 75px;
+    padding-bottom: 150px;
+    padding: 0;
+
+    font-size: 20px;
+}
+
+.container__profile {
+    display: table;
+    width: 100%;
+    max-width: 1108px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+
+    background-color: #00dc8c;
+}
+
+.members {
+    background-color: #00dc8c;
+    display: flex;
+}
+
+.members__col {
+    flex: 1 1 0;
+    max-width: 337px;
+}
+
+.members__item {
+    position: relative;
+    max-width: 337px;
+
+    background: linear-gradient(to  top right, #00dc8c, #ffc300);
+}
+
+.members__item:hover .members__image {
+    opacity: .4;
+}
+
+.members__item:hover .members__info {
+    opacity: 1;
+}
+
+.members__noitem {
+    position: relative;
+    width: 338px;
+    height: 338px;
+}
+
+.members__noitem__special {
+    display: table-cell;
+    position: relative;
+    width: 338px;
+    height: 338px;
+
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+
+    vertical-align: middle;
+    text-align: center;
+}
+
+.members__image {
+    display: block;
+    width: 338px;
+    height: 338px;
+
+    transition: opacity .2s linear;
+}
+
+.members__info {
+    padding: 0 25%;
+
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+
+    transform: translate3d(0, -50%, 0);
+    transition: opacity .2s linear;
+}
+
+.members__title {
+    margin-bottom: 5px;
+
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.members__text {
+    font-size: 15px;
+}
+
+
+/* GoTop button */
+#go-top {
+    position: fixed;
+    display: none;
+
+    bottom: 10px; 
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding-top: 7px;
+
+    text-align: center;
+    background: #3a3a3a;
+    color: #fff;
+    opacity: 0.6;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+  
+#go-top:hover {
+    opacity: 1;
+	
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+
+}
+
+
+/* discography.html */
+/* Discography */
+.album__list {
+    width: 100%;
+    max-width: 1108px;
+    margin: 0 auto;
+    padding: 110px 170px;
+}
+
+.albums__title {
+    position: relative;
+    font-size: 90px;
+    color: #fff;
+    text-align: center;
+    filter: drop-shadow(0 0 3px #fff);
+}
+
+.album__list ul {
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.album__list li {
+    float: left;
+    width: 48%;
+    height: 98%;
+    margin: 1% 1%;
+    filter: drop-shadow(0 0 5px #333);
+}
+
+
+.album__list a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.albums__obj {
+    background: #dcdcdc;
+}
+
+.albums__obj img
+{
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.albums__obj:hover img {
+    opacity: 1;
+    -webkit-animation: flash 1.3s;
+	animation: flash 1.3s;
+}
+
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+/* the-dream-chapter-star.html */
+/*The Dream Chapter : Star */
+.album__name {
+    padding-top: 120px;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.album__cover {
+    max-width: 1108px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.album__cover img {
+    max-height: 80%;
+    max-width: 80%;
+
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    filter: drop-shadow(0 0 3px #333);
+}
+
+.contents__title {
+    position: relative;
+    padding: 30px 0;
+    font-size: 60px;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+.album__video {
+    padding-bottom: 120px;
+}
+
+.separator {
+    padding: 60px 0;
+}
+
+.album__photo {
+    padding-bottom: 120px;
+}
+
+#track {
+    padding-top: 120px;
+}
+
+.star-song-list {
+    background: url(../assets/images/song-bg.png) no-repeat center;
+    background-size: 100% auto;
+}
+
+.star-song-list-wrap {
+    width: auto;
+    margin: 0 auto;
+    padding: 70px 420px 180px;
+}
+
+.star-song-list-inner {
+    color: #315167;
+    width: auto;
+
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.star-song-list-inner ol {
+    list-style-type: none;
+}
+
+.star-number {
+    color: #ffda00;
+    padding-right: 25px;
+}
+
+.star-time {
+    color: #3a85b6;
+    padding-left: 5px;
+}
+
+/*the-dream-chapter-magic.html*/
+/*The Dream Chapter : Magic*/
+.magic-song-list {
+    background: url(../assets/images/song-bg.png) no-repeat center;
+    background-size: 100% auto;
+}
+
+.magic-song-list-wrap {
+    width: auto;
+    margin: 0 auto;
+    padding: 70px 330px 180px;
+}
+
+.magic-song-list-inner {
+    color: #013526;
+    width: auto;
+
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.magic-song-list-inner ol {
+    list-style-type: none;
+}
+
+.magic-number {
+    color: #ffea00;
+    padding-right: 25px;
+}
+
+.magic-time {
+    color: #195343;
+    padding-left: 5px;
+}
+
+
+/* Album Photo Slider */
+#slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+  
+#slider ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+}
+  
+.star-slider ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 720px;
+    width: 485px;
+}
+
+.magic-slider ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 663px;
+    width: 994px;
+}
+
+button.control_prev, button.control_next {
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    display: block;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    background: #3a3a3a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+  
+button.control_prev:hover, button.control_next:hover {
+    opacity: 0.9;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+  
+button.control_prev {
+    border-radius: 50%;
+}
+  
+button.control_next {
+    right: 0;
+    border-radius: 50%;
+}
+
+
+/* gallery.html */
+/* Gallery */
+#mapContainer {
+    display: none;
+    height: 400px;
+    width: 800px;
+    margin: 15px auto 50px auto;
+}
+
+#moa {
+    height: 657px;
+    overflow: hidden;
+}
+
+.moa__title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+
+    margin-top: 30%;
+    margin-bottom: 5px;
+}
+
+.moa__suptitle {
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+
+#hidden-coords {
+    display: none;
+}
+
+#space {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* fanclub.html */
+/* Fanclub */
+.logo {
+    background: #00dc8c;
+
+    width: 100%;
+    max-width: none;
+    padding-top: 60px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.contents__obj {
+    max-width: 1349px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.logoImg {
+    display: block;
+    width: 100%;
+}
+
+.fanclub__header {
+    width: 100%;
+    margin: 50px auto;
+
+    text-align: center;
+}
+
+.fanclub__title {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.fanclub__suptitle {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.reg__form {
+    margin-bottom: 30px;
+    padding: 0 200px;
+}
+
+.reg__inner {
+    text-align: center;
+}
+
+input[type=text], input[type=password], input[type=date], input[type=email], input[type=tel], input[type=url] {
+    display: inline-block;
+    align-content: center;
+
+    width: 30%;
+    padding: 5px;
+    margin: 5px 0 20px 0;
+}
+
+.reg__btn {
+    background-color: #00dc8c;
+    color: #fff;
+    border: none;
+    width: 10%;
+    margin: 10px 0;
+}
+
+
+/* Footer  */
+.footer-inner {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-link {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 7px 7px;
+    margin: 0 5px;
+
+    font-size: 15px;
+    text-decoration: none;
+    color: #1d1d1d;
+    background-color: #333;
+    line-height: 1;
+
+    border-radius: 50%;
+
+    transition: background .2s linear, color .2s linear;
+}
+
+.footer-link:hover {
+    color: #fff;
+    background-color: #00dc8c;
+    border-radius: 50%;
+}
+
+#star:hover {
+    color: #ffda00;
+    cursor: pointer;
+}
