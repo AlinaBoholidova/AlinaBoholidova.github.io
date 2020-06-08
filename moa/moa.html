@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="expires" content="Sat, 09 May 2020 00:00:01 GMT">
+    <meta name="author" content="Bogolidova Alina Andriivna, alina.boholidova@nure.ua">
+    <meta itemprop="keywords" content="TOMORROW X TOGETHER, SOOBIN, YEONJUN, BEOMGYU, TAEHYUN, HUENINGKAI">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="starfield.js"></script>
+    <title>MOA | TOMORROW X TOGETHER</title>
+</head>
+
+<body>
+    
+    <header class="header" style="background-color: #333">
+        <div class="container">
+            <div class="header__inner">
+
+                <a href="index.html" title="Go to TOMORROW X TOGETHER Home Page"> 
+                    <img class="responsiveImg" src="logo.png" alt=""> 
+                </a>
+
+                <nav class="nav">
+                    <a class="nav__link" href="profile" title="View Profiles">Profile</a>
+                    <a class="nav__link" href="discography" title="View Releases">Discography</a>
+                    <a class="nav__link" href="moa" title="Special for MOA">MOA</a>
+                    <a class="nav__link" href="fanclub" title="Join the Fan Club">Fan Club</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <main style="background-color: #2d3436; background: radial-gradient(circle, #101213 0%, #000000 74%); overflow: hidden;">
+    <section>
+        <div class="container" id="moa">
+            <h1 class="moa__title">Moments Of Alwaysness</h1>
+            <p class="moa__suptitle">..moments that TXT members and fans collect to form one dream.</p>
+            <canvas id="space"></canvas>
+        </div>
+        <div class="container">
+            <p class="moa__suptitle" onclick="getCoordinates();viewCoordinates()">Will you join us?</p>
+            
+            <p class="moa__suptitle" id="hidden-coords">Your moment in <span id="status"></span> was spent together with TXT always!</p>
+            
+            <div id="mapContainer"></div>
+            <script>
+                function getCoordinates() {
+                    navigator.geolocation.getCurrentPosition(
+                    function success(position) {
+                        const latitude  = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+    
+                        var mapOptions = {
+                            zoom: 15,
+                            center: [latitude, longitude]
+                        };
+
+                        var map = new L.map('mapContainer', mapOptions);
+                        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+                        map.addLayer(layer);
+                        var marker = L.marker([latitude, longitude]).addTo(map);
+
+                        const status = document.querySelector('#status');
+                        status.textContent = `(${latitude.toFixed(2)}°; ${longitude.toFixed(2)}°)`;
+                    },
+                    function error() {
+                        status.textContent = 'Unable to retrieve your location';
+                    },
+                    {
+                        maximumAge: 0,
+                        enableHighAccuracy: true,
+                        timeout: 60000
+                    });
+                };
+                function viewCoordinates() {
+                    document.getElementById("hidden-coords").style.display = "block";
+                    document.getElementById("mapContainer").style.display = "block";
+                }
+            </script>
+        </div>
+    </section>
+    </main>
+
+
+    <footer style="background: #272727;">
+        <div class="container">
+            <div class="footer-inner">
+                <a class="footer-link" id="star" title="Follow Stars">
+                    <i class="fas fa-star"></i>
+                </a>
+                <a class="footer-link" href="https://twitter.com/TXT_bighit" title="Twitter : Open in a New Window" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="footer-link" href="https://www.instagram.com/txt_bighit/" title="Instagram : Open in a New Window" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="footer-link" href="https://www.facebook.com/TXT.bighit/" title="Facebook : Open in a New Window" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="footer-link" href="https://www.youtube.com/channel/UCtiObj3CsEAdNU6ZPWDsddQ" title="YouTube : Open in a New Window" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div> 
+        </footer>
+</body>
+</html>
