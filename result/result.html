@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="expires" content="Sat, 09 May 2020 00:00:01 GMT">
+    <meta name="author" content="Bogolidova Alina Andriivna, alina.boholidova@nure.ua">
+    <meta itemprop="keywords" content="TOMORROW X TOGETHER, SOOBIN, YEONJUN, BEOMGYU, TAEHYUN, HUENINGKAI">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>FANCLUB | TOMORROW X TOGETHER</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <a href="index.html" title="Go to TOMORROW X TOGETHER Home Page"> 
+                    <img class="responsiveImg" src="logo.png" alt=""> 
+                </a>
+
+                <nav class="nav">
+                    <a class="nav__link" href="profile" title="View Profiles">Profile</a>
+                    <a class="nav__link" href="discography" title="View Releases">Discography</a>
+                    <a class="nav__link" href="moa" title="Special for MOA">MOA</a>
+                    <a class="nav__link" href="fanclub" title="Join the Fan Club">Fan Club</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <section class="logo">
+
+        <div class="contents__obj">
+            <img class="logoImg" src="schedule_magic.png" alt="">
+        </div>
+
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="fanclub__header">
+                <h1 class="fanclub__title">TXT Global Official Fanclub MOA Membership</h1>
+            </div>
+
+			<form action="fanclub.html" class="reg__form">
+                <h2 class="fanclub__suptitle">You have been successfully verified for TXT GLOBAL OFFICIAL FANCLUB MOA MEMBERSHIP!</h2>
+				<p id="result"></p>
+				<fieldset class="reg__inner">
+
+					<label for="name"><b>Name</b></label><br>
+					<script>document.write(localStorage.getItem('name'));</script><br>
+					
+					<label for="surname"><b>Surname</b></label><br>
+					<script>document.write(localStorage.getItem('surname'));</script><br>
+					
+					<label for="date"><b>Birth date</b></label><br>
+					<script>document.write(localStorage.getItem('date'));</script><br>
+					
+					<label for="country"><b>Country</b></label><br>
+                    <script>document.write(localStorage.getItem('country'));</script><br>
+
+                    <label for="phone"><b>Phone number</b></label><br>
+                    <script>document.write(localStorage.getItem('phone'));</script><br>
+                    
+					<p>Your <b>password</b> was sent to your <b>email</b> <script>document.write(localStorage.getItem('email'));</script><br></p>
+
+					<button class="reg__btn" onclick="Clear()" type="submit">Confirm</button>
+
+                </fieldset>
+            </form>
+            
+			<script>
+                function Clear() {
+                    localStorage.setItem('name', '');
+                    localStorage.setItem('surname', '');
+                    localStorage.setItem('date', '');
+                    localStorage.setItem('country', '');
+                    localStorage.setItem('email', '');
+                    localStorage.setItem('phone', '');
+                }
+            </script>
+					
+        </div>
+    </section>
+    </main>
+
+    <footer style="background: #272727;">
+        <div class="container">
+            <div class="footer-inner">
+                <a class="footer-link" id="star" title="Follow Stars">
+                    <i class="fas fa-star"></i>
+                </a>
+                <a class="footer-link" href="https://twitter.com/TXT_bighit" title="Twitter : Open in a New Window" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="footer-link" href="https://www.instagram.com/txt_bighit/" title="Instagram : Open in a New Window" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="footer-link" href="https://www.facebook.com/TXT.bighit/" title="Facebook : Open in a New Window" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="footer-link" href="https://www.youtube.com/channel/UCtiObj3CsEAdNU6ZPWDsddQ" title="YouTube : Open in a New Window" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div> 
+    </footer>
+
+</body>
+
+</html>
