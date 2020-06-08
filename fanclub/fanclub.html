@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="expires" content="Sat, 09 May 2020 00:00:01 GMT">
+    <meta name="author" content="Bogolidova Alina Andriivna, alina.boholidova@nure.ua">
+    <meta itemprop="keywords" content="TOMORROW X TOGETHER, SOOBIN, YEONJUN, BEOMGYU, TAEHYUN, HUENINGKAI">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>FANCLUB | TOMORROW X TOGETHER</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <a href="index.html" title="Go to TOMORROW X TOGETHER Home Page"> 
+                    <img class="responsiveImg" src="logo.png" alt=""> 
+                </a>
+
+                <nav class="nav">
+                    <a class="nav__link" href="profile" title="View Profiles">Profile</a>
+                    <a class="nav__link" href="discography" title="View Releases">Discography</a>
+                    <a class="nav__link" href="moa" title="Special for MOA">MOA</a>
+                    <a class="nav__link" href="fanclub" title="Join the Fan Club">Fan Club</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <section class="logo">
+
+        <div class="contents__obj">
+            <img class="logoImg" src="schedule_magic.png" alt="">
+        </div>
+
+    </section>
+
+    <section>
+        <div class="container" id="fanclub">
+            <div class="fanclub__header">
+                <h1 class="fanclub__title">TXT Global Official Fan Club MOA Membership</h1>
+            </div>
+
+			<form name="apply" action="result.html" onsubmit="Check()" class="reg__form">
+                <h2 class="fanclub__suptitle">Registration</h2>
+                <p class="fanclub__suptitle">Please fill in this form to apply for membership.</p>
+				<fieldset class="reg__inner">
+
+				<label for="name"><b>Name</b></label><br>
+				<input type="text" placeholder="Enter name" name="name" pattern="[A-Za-z]{3,}" required><br>
+                
+                <label for="surname"><b>Surname</b></label><br>
+				<input type="text" placeholder="Enter surname" name="surname" pattern="[A-Za-z]{3,}" required><br>
+				
+				<label for="date"><b>Birth date</b></label><br>
+				<input type="datetime-local" name="date" required><br><br>
+				
+				<label for="country"><b>Country</b></label><br>
+                <input type="text" placeholder="Enter country" name="country" pattern="[A-Za-z]{4,}" required><br>
+                
+                <label for="email"><b>Email</b></label><br>
+                <input type="email" placeholder="example@outlook.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
+
+                <label for="phone"><b>Phone number</b></label><br>
+                <input type="tel" placeholder="+123456789" name="phone" pattern="[\+]\d[0-9]{7,13}" required><br>
+
+                <label for="password"><b>Password</b></label><br>
+                <input type="password" placeholder="Enter password" name="password" pattern=".{6,}" required><br>
+                
+                <label for="link"><b>Link to TXT's first MV</b></label><br>
+                <input type="url" id="link" placeholder="Click on a star" name="link" required><br>
+
+                <button class="reg__btn" onclick="ValidateUrl()" type="submit">Submit</button>
+                
+				</fieldset>
+            </form> 
+            
+            <script>
+                function ValidateUrl() {
+                    const fmw = "https://youtu.be/W3iSnJ663II";
+                    var link = document.getElementById("link").value.toString();
+                    if (fmw != link) {
+                        document.getElementById("link").setCustomValidity("Wrong URL");}
+                    else {
+                        document.getElementById("link").setCustomValidity('');}
+                };
+                function Check() {
+                    var name = document.apply.name.value.toString();
+                    var surname = document.apply.surname.value.toString();
+                    var date = document.apply.date.value.toString();
+                    var country = document.apply.country.value.toString();
+                    var email = document.apply.email.value.toString();
+                    var phone = document.apply.phone.value.toString();
+                
+                    localStorage.setItem('name', name);
+                    localStorage.setItem('surname', surname);
+                    localStorage.setItem('date', date);
+                    localStorage.setItem('country', country);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('phone', phone);
+                }
+            </script>
+
+        </div>
+    </section>
+    </main>
+    
+    <footer style="background: #272727;">
+        <div class="container">
+            <div class="footer-inner">
+                <a class="footer-link" id="star" onclick="Insert()" title="Follow Stars">
+                    <i class="fas fa-star"></i>
+                </a>
+                <script>
+                    function Insert() {
+                        document.getElementById("link").value = "https://youtu.be/W3iSnJ663II";
+                    }
+                </script>
+                <a class="footer-link" href="https://twitter.com/TXT_bighit" title="Twitter : Open in a New Window" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="footer-link" href="https://www.instagram.com/txt_bighit/" title="Instagram : Open in a New Window" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="footer-link" href="https://www.facebook.com/TXT.bighit/" title="Facebook : Open in a New Window" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="footer-link" href="https://www.youtube.com/channel/UCtiObj3CsEAdNU6ZPWDsddQ" title="YouTube : Open in a New Window" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div> 
+    </footer>
+    
+</body>
+</html>
