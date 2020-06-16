@@ -186,7 +186,7 @@ h1, h2, h3 {
     height: 200px;
     margin: 35% auto;
     
-	background: url("TXT.png") no-repeat;
+	background: url("../TXT.png") no-repeat;
     background-size: cover;
 
 	opacity: 1;
